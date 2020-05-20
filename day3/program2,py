@@ -1,0 +1,26 @@
+#Method 1: Using build-in function
+from itertools import permutations
+
+def method1(s):
+    print([''.join(p) for p in permutations(s)])
+
+
+#Method 2: User-defined function
+def perm(string, step=0):
+    if(step == len(string)):
+        print("".join(string),end=" ")
+
+    for i in range(step,len(string)):
+        c_list = [j for j in string]
+        c_list[step],c_list[i] = c_list[i],c_list[step]
+        perm(c_list,step+1)
+
+
+str1= input("Enter a string:")
+
+print("\nAll the possible permutations are:\n\nFrom method 1:")
+method1(str1)
+
+
+print("\nFrom method 2:")
+perm(str1)
