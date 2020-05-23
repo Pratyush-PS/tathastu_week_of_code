@@ -17,4 +17,4 @@ for i in range(size):
 print("\nInitial list:",my)
 
 
-print("Replacing with :",with_largest(my,size))
+print("After performing replacement :",with_largest(my,size))
